@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("product")
+@RequestMapping("products")
 public class ProductController {
 
     @Autowired
