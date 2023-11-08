@@ -17,10 +17,11 @@ public class ProductController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping
-    public void saveProducts(@RequestBody ProductRequestDTO data) {
-        Product productData = new Product(data);
-        repository.save(productData);
-        return;
+    public void saveProducts(@RequestBody List<ProductRequestDTO> dataList) {
+        for (ProductRequestDTO data : dataList) {
+            Product productData = new Product(data);
+            repository.save(productData);
+        }
     }
 
 
